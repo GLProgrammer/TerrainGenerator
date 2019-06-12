@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualizer", "Visualizer\Visualizer.csproj", "{8703058A-E317-49B8-9499-C5B68B299D04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainGenerator", "TerrainGenerator\TerrainGenerator.csproj", "{44A24050-F07B-4FAF-8851-147E1C9EEE3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerrainTools", "TerrainTools\TerrainTools.csproj", "{E71C49D9-BDF0-4537-B2D0-28961F36066D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8703058A-E317-49B8-9499-C5B68B299D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8703058A-E317-49B8-9499-C5B68B299D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8703058A-E317-49B8-9499-C5B68B299D04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44A24050-F07B-4FAF-8851-147E1C9EEE3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44A24050-F07B-4FAF-8851-147E1C9EEE3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44A24050-F07B-4FAF-8851-147E1C9EEE3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44A24050-F07B-4FAF-8851-147E1C9EEE3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71C49D9-BDF0-4537-B2D0-28961F36066D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71C49D9-BDF0-4537-B2D0-28961F36066D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71C49D9-BDF0-4537-B2D0-28961F36066D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71C49D9-BDF0-4537-B2D0-28961F36066D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
