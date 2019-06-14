@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TerrainTools;
     
 namespace Visualizer
@@ -6,8 +7,8 @@ namespace Visualizer
     class Program
     {
         static void Main(string[] args) {
-            
-            float[,] map = new float[50, 50];
+
+            float[,] map = new float[50, 100];
             map = Generator.PureRandom(50, 100, "aaa");
             map = TerrainMath.Multiply(map, 10);
 
@@ -19,10 +20,10 @@ namespace Visualizer
             map = Smooth.VerticalSmooth(map);
             map = Smooth.HorizontalSmooth(map);
             map = Smooth.VerticalSmooth(map);
-
-            map = Water.Reduce(map, 4, 0.5f);
+            map = Mountains.RemoveSmall(map, 6, 9);
             map = Rounder.RoundDown(map);
             VisualizeColor(map);
+
             Console.ReadLine();
         }
 
