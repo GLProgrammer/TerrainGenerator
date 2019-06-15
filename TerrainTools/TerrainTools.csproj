@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generator.cs" />
+    <Compile Include="GoniometricGenerator.cs" />
     <Compile Include="Mountains.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rounder.cs" />

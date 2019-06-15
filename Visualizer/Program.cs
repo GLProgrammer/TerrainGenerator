@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using TerrainTools;
-    
+
 namespace Visualizer
 {
     class Program
     {
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
             Console.ForegroundColor = ConsoleColor.Black;
-            float[,] map = new float[50, 50];
-            map = Generator.PureRandom(50, 50, "aac");
+            float[,] map = new float[10, 10];
+            map = Generator.PureRandom(10, 10, "asd");
+            //map = GoniometricGenerator.sinWave(50, 50, 0.5f);
             map = TerrainMath.Multiply(map, 10);
-            //map = Smooth.HorizontalSmooth(map);
-            //map = Smooth.VerticalSmooth(map);
             map = Smooth.SquareSmooth(map);
-            //map = Mountains.RemoveSmall(map, 6, 9);
-            //map = Water.RemoveSmall(map, 4, 7);
+            map = Mountains.RemoveSmall(map, 6, 9);
+            map = Water.RemoveSmall(map, 4, 7);
             map = Rounder.RoundDown(map);
+            float[,] overI = new float[2,2];
+            overI[0, 0] = 9;
+            overI[0, 1] = -1;
+            overI[1, 0] = -1;
+            overI[1, 1] = 9;
+            map = TerrainMath.Over(map, overI);
+            //map = Rounder.Round(map);
             VisualizeColor(map);
 
             Console.ReadLine();
