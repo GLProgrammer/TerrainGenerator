@@ -19,7 +19,7 @@ namespace TerrainTools
                     {
                         if (GetSize(map, x, y, mountainLevel) <= minsize)
                         {
-                            map[x, y] = 0;
+                            map[x, y] = mountainLevel - 1;
                         }
                     }
                 }

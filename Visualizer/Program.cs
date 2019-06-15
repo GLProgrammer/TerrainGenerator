@@ -7,20 +7,15 @@ namespace Visualizer
     class Program
     {
         static void Main(string[] args) {
-
-            float[,] map = new float[50, 100];
-            map = Generator.PureRandom(50, 100, "aaa");
+            Console.ForegroundColor = ConsoleColor.Black;
+            float[,] map = new float[50, 50];
+            map = Generator.PureRandom(50, 50, "aac");
             map = TerrainMath.Multiply(map, 10);
-
-            map = Smooth.HorizontalSmooth(map);
-            map = Smooth.VerticalSmooth(map);
-            map = Smooth.HorizontalSmooth(map);
-            map = Smooth.VerticalSmooth(map);
-            map = Smooth.HorizontalSmooth(map);
-            map = Smooth.VerticalSmooth(map);
-            map = Smooth.HorizontalSmooth(map);
-            map = Smooth.VerticalSmooth(map);
-            map = Mountains.RemoveSmall(map, 6, 9);
+            //map = Smooth.HorizontalSmooth(map);
+            //map = Smooth.VerticalSmooth(map);
+            map = Smooth.SquareSmooth(map);
+            //map = Mountains.RemoveSmall(map, 6, 9);
+            //map = Water.RemoveSmall(map, 4, 7);
             map = Rounder.RoundDown(map);
             VisualizeColor(map);
 
