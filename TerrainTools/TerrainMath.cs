@@ -63,7 +63,7 @@ namespace TerrainTools
             {
                 for (int x = 0; x < map.GetLength(0); x++)
                 {
-                    newMap[x, y] = map[x, y] * number;
+                    newMap[x, y] = map[x, y] / number;
                 }
             }
             return newMap;
@@ -136,7 +136,6 @@ namespace TerrainTools
             }
             return newMap;
         }
-        
         /// <summary>
         /// Set positions to override
         /// </summary>
@@ -159,6 +158,18 @@ namespace TerrainTools
             }
 
 
+            return newMap;
+        }
+        public static float[,] Mix(float[,] map, float[,] map2)
+        {
+            float[,] newMap = map;
+            for (int y = 0; y < map.GetLength(1); y++)
+            {
+                for (int x = 0; x < map.GetLength(0); x++)
+                {
+                    newMap[x, y] = (map[x, y] + map2[x, y]) / 2;
+                }
+            }
             return newMap;
         }
     }

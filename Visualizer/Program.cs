@@ -9,20 +9,24 @@ namespace Visualizer
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Black;
-            float[,] map = new float[10, 10];
-            map = Generator.PureRandom(10, 10, "asd");
+            float[,] map = new float[40, 40];
+            float[,] map2 = new float[40, 40];
+            map = Generator.PureRandom(40, 40, "asd");
+            map2 = Generator.PureRandom(40, 40, "aaa");
             //map = GoniometricGenerator.sinWave(50, 50, 0.5f);
             map = TerrainMath.Multiply(map, 10);
             map = Smooth.SquareSmooth(map);
             map = Mountains.RemoveSmall(map, 6, 9);
             map = Water.RemoveSmall(map, 4, 7);
+
+            map2 = TerrainMath.Multiply(map2, 10);
+            map2 = Smooth.SquareSmooth(map);
+            map2 = Mountains.RemoveSmall(map, 6, 9);
+            map2 = Water.RemoveSmall(map, 4, 7);
+
+            map = TerrainMath.Mix(map, map2);
+            //map = TerrainMath.Clamp(map, 0, 9);
             map = Rounder.RoundDown(map);
-            float[,] overI = new float[2,2];
-            overI[0, 0] = 9;
-            overI[0, 1] = -1;
-            overI[1, 0] = -1;
-            overI[1, 1] = 9;
-            map = TerrainMath.Over(map, overI);
             //map = Rounder.Round(map);
             VisualizeColor(map);
 
